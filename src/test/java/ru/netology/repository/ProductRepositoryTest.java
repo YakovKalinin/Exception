@@ -41,13 +41,5 @@ class ProductRepositoryTest {
     public void shouldFindByNotRightId () {
         Assertions.assertThrows(NotFoundException.class, () -> repository.removeById (10));
     }
-    @Test
-    public void shouldFindByIdTen () {
-        repository.removeById(10);
-        Product[] expected = {first, second, secondBook, firstTShirt, secondTShirt};
-        Product[] actual = repository.findAll();
-        assertArrayEquals(expected, actual);
-    }
-
 
 }
